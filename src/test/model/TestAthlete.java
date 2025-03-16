@@ -1,0 +1,44 @@
+package model;
+
+import static org.junit.Assert.assertFalse;
+import static org.junit.jupiter.api.Assertions.assertEquals;
+import static org.junit.jupiter.api.Assertions.assertTrue;
+
+import java.util.ArrayList;
+import java.util.List;
+
+import org.junit.jupiter.api.BeforeEach;
+import org.junit.jupiter.api.Test;
+
+public class TestAthlete {
+    Athlete testAthlete;
+    List<Boolean> history;
+    double bmi;
+    
+    @BeforeEach
+    void runBefore() {
+        history = new ArrayList<Boolean>();
+        history.add(false);
+        history.add(true);
+        history.add(false);
+
+        testAthlete = new Athlete("ATHL1", 22, true, "Soccer", 165.1, 54.4, history);
+    }
+
+    @Test
+    void testConstructor() {
+        assertEquals("ATHL1", testAthlete.getName());
+        assertEquals(22, testAthlete.getAge());
+        assertTrue(testAthlete.getGender());
+        assertEquals("Soccer", testAthlete.getSport());
+        assertEquals(165.1, testAthlete.getHeight());
+        assertEquals(54.4, testAthlete.getWeight());
+        assertFalse(testAthlete.getFamilyHistory());
+        assertFalse(testAthlete.getPrevInjuryL());
+        assertTrue(testAthlete.getPrevInjuryR());
+        double height = testAthlete.getHeight();
+        double weight = testAthlete.getWeight();
+        bmi = weight / ((height * height) / 10000);
+        assertEquals(bmi, testAthlete.calculateBMI(height, weight));
+    }
+}
