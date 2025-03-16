@@ -33,12 +33,14 @@ public class TestAthlete {
         assertEquals("Soccer", testAthlete.getSport());
         assertEquals(165.1, testAthlete.getHeight());
         assertEquals(54.4, testAthlete.getWeight());
-        assertFalse(testAthlete.getFamilyHistory());
-        assertFalse(testAthlete.getPrevInjuryL());
-        assertTrue(testAthlete.getPrevInjuryR());
+        assertFalse(testAthlete.hasFamilyHistory());
+        assertFalse(testAthlete.hasPrevInjuryL());
+        assertTrue(testAthlete.hasPrevInjuryR());
         double height = testAthlete.getHeight();
         double weight = testAthlete.getWeight();
         bmi = weight / ((height * height) / 10000);
         assertEquals(bmi, testAthlete.calculateBMI(height, weight));
+        assertEquals(bmi, testAthlete.getBMI());
+        assertEquals(history, testAthlete.getHistory());
     }
 }
