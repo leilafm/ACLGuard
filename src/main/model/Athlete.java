@@ -12,6 +12,7 @@ public class Athlete {
     private double weight;
     private List<Boolean> history;
     private double bmi;
+    private BiomechanicalData bioMechData;
     
     public Athlete(String name, int age, boolean gender, String sport, double height, double weight, List<Boolean> history) {
         this.name = name;
@@ -22,6 +23,7 @@ public class Athlete {
         this.weight = weight;
         this.history = history;
         this.bmi = calculateBMI(height, weight);
+        bioMechData = new BiomechanicalData();
     }
 
     // REQUIRES: height in cm, weight in kg
@@ -76,5 +78,9 @@ public class Athlete {
 
     public double getBMI() {
         return bmi;
+    }
+
+    public BiomechanicalData getBioMechData() {
+        return bioMechData;
     }
 }

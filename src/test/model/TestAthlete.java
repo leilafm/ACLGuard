@@ -14,6 +14,7 @@ public class TestAthlete {
     Athlete testAthlete;
     List<Boolean> history;
     double bmi;
+    BiomechanicalData biomech;
     
     @BeforeEach
     void runBefore() {
@@ -21,6 +22,7 @@ public class TestAthlete {
         history.add(false);
         history.add(true);
         history.add(false);
+        biomech = new BiomechanicalData();
 
         testAthlete = new Athlete("ATHL1", 22, true, "Soccer", 165.1, 54.4, history);
     }
@@ -42,5 +44,6 @@ public class TestAthlete {
         assertEquals(bmi, testAthlete.calculateBMI(height, weight));
         assertEquals(bmi, testAthlete.getBMI());
         assertEquals(history, testAthlete.getHistory());
+        assertEquals(biomech, testAthlete.getBioMechData());
     }
 }
