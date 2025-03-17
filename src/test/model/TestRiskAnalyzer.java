@@ -11,7 +11,6 @@ import org.junit.jupiter.api.BeforeEach;
 import org.junit.jupiter.api.Test;
 
 public class TestRiskAnalyzer {
-    public class RiskAnalyzerTest {
     
     private RiskAnalyzer riskAnalyzer;
     private Athlete lowRiskAthlete;
@@ -270,4 +269,4 @@ public class TestRiskAnalyzer {
         bioData.setQAngle(25.0);
     }
 }
-}
+
