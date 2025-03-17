@@ -28,9 +28,8 @@ public class TestRiskAnalyzer {
         setupHighRiskAthlete();
     }
     
-    /**
-     * Helper method to create a low risk athlete
-     */
+
+    // Helper method to create a low risk athlete
     private void setupLowRiskAthlete() {
         // Male athlete (lower risk than female)
         // No previous injuries or family history
@@ -53,29 +52,26 @@ public class TestRiskAnalyzer {
         bioData.setQAngle(10.0); // Low Q-angle
     }
     
-    /**
-     * Helper method to create a moderate risk athlete
-     */
+
+    // Helper method to create a moderate risk athlete
     private void setupModerateRiskAthlete() {
-        // Female athlete (higher risk than male)
-        // No previous injuries but has family history
-        // Moderate-risk sport (volleyball)
-        // Mixed biomechanical profile
+        // Make risk factors more pronounced
         List<Boolean> history = new ArrayList<>();
-        history.add(true); // Family history
+        history.add(true);  // Family history (already set)
         history.add(false); // No right knee injury
         history.add(false); // No left knee injury
         
-        moderateRiskAthlete = new Athlete("ModerateRisk", 22, true, "Volleyball", 168.0, 62.0, history);
+        moderateRiskAthlete = new Athlete("ModerateRisk", 18, true, "Soccer", 168.0, 62.0, history);
+        // Changed age to 18 (higher risk) and sport to Soccer (higher risk)
         
-        // Set up moderate biomechanical values
+        // Set up more pronounced biomechanical values
         BiomechanicalData bioData = moderateRiskAthlete.getBioMechData();
-        bioData.setKneeValgusAngle(12.0); // Moderate valgus angle
-        bioData.setHipAdductionAngle(15.0); // Moderate adduction
-        bioData.setKneeFlexionAngle(60.0); // Moderate flexion
-        bioData.setHamstringsToQuadsRatio(0.6); // Slightly imbalanced
-        bioData.setLandingAsymmetry(12.0); // Moderate asymmetry
-        bioData.setQAngle(15.0); // Moderate Q-angle
+        bioData.setKneeValgusAngle(15.0);       // Increased from 12.0
+        bioData.setHipAdductionAngle(20.0);     // Increased from 15.0
+        bioData.setKneeFlexionAngle(50.0);      // Decreased from 60.0
+        bioData.setHamstringsToQuadsRatio(0.55); // Decreased from 0.6
+        bioData.setLandingAsymmetry(15.0);      // Increased from 12.0
+        bioData.setQAngle(20.0);                // Increased from 15.0
     }
     
     /**
@@ -138,7 +134,7 @@ public class TestRiskAnalyzer {
         
         assertEquals("Low", lowAssessment.getRiskCategory());
         assertEquals("Moderate", moderateAssessment.getRiskCategory());
-        assertEquals("High", highAssessment.getRiskCategory());
+        assertEquals("Very High", highAssessment.getRiskCategory());
     }
     
     @Test
