@@ -18,7 +18,7 @@ public class TestBiomechanicalData {
     
     @Test
     public void testDefaultConstructor() {
-        
+        // Initialize with no parameters
         assertEquals(0.0, bioData.getKneeValgusAngle(), DELTA);
         assertEquals(0.0, bioData.getHipAdductionAngle(), DELTA);
         assertEquals(0.0, bioData.getKneeFlexionAngle(), DELTA);
