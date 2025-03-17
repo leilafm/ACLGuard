@@ -1,20 +1,24 @@
 package model;
 
+import static org.junit.Assert.assertFalse;
+import static org.junit.Assert.assertNotNull;
 import static org.junit.jupiter.api.Assertions.assertEquals;
-import org.junit.Test;
-import org.junit.Before;
+import static org.junit.jupiter.api.Assertions.assertTrue;
+import org.junit.jupiter.api.Test;
+import org.junit.jupiter.api.BeforeEach;
 
 public class TestBiomechanicalData {
     private BiomechanicalData bioData;
     private static final double DELTA = 0.001; // Delta for double comparison
     
-    @Before
+    @BeforeEach
     public void setUp() {
         bioData = new BiomechanicalData();
     }
     
     @Test
     public void testDefaultConstructor() {
+        
         assertEquals(0.0, bioData.getKneeValgusAngle(), DELTA);
         assertEquals(0.0, bioData.getHipAdductionAngle(), DELTA);
         assertEquals(0.0, bioData.getKneeFlexionAngle(), DELTA);
