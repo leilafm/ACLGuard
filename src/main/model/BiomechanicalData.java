@@ -1,6 +1,6 @@
 package model;
 
-//stores biomechanical measurements for an athlete related to ACL injury risk assessment.
+// stores biomechanical measurements for an athlete related to ACL injury risk assessment
 public class BiomechanicalData {
     // Landing mechanics
     private double kneeValgusAngle; // degrees
@@ -70,13 +70,21 @@ public class BiomechanicalData {
         this.intercondylarNotchWidth = intercondylarNotchWidth;
     }
     
-    
+    // GETTERS
     public double getKneeValgusAngle() {
         return kneeValgusAngle;
     }
     
+    public void setKneeValgusAngle(double kneeValgusAngle) {
+        this.kneeValgusAngle = kneeValgusAngle;
+    }
+    
     public double getHipAdductionAngle() {
         return hipAdductionAngle;
+    }
+
+    public void setHipAdductionAngle(double hipAdductionAngle) {
+        this.hipAdductionAngle = hipAdductionAngle;
     }
     
     
@@ -84,47 +92,78 @@ public class BiomechanicalData {
         return kneeFlexionAngle;
     }
     
+    public void setKneeFlexionAngle(double kneeFlexionAngle) {
+        this.kneeFlexionAngle = kneeFlexionAngle;
+    }
     
     public double getVerticalJumpHeight() {
         return verticalJumpHeight;
     }
 
+    public void setVerticalJumpHeight(double verticalJumpHeight) {
+        this.verticalJumpHeight = verticalJumpHeight;
+    }
 
     public double getLandingForce() {
         return landingForce;
     }
-    
+
+    public void setLandingForce(double landingForce) {
+        this.landingForce = landingForce;
+    }
     
 
     public double getLandingAsymmetry() {
         return landingAsymmetry;
     }
-    
+
+    public void setLandingAsymmetry(double landingAsymmetry) {
+        this.landingAsymmetry = landingAsymmetry;
+    }
     
 
     public double getHamstringsToQuadsRatio() {
         return hamstringsToQuadsRatio;
+    }
+
+    public void setHamstringsToQuadsRatio(double hamstringsToQuadsRatio) {
+        this.hamstringsToQuadsRatio = hamstringsToQuadsRatio;
     }
     
 
     public int getSingleLegBalanceTime() {
         return singleLegBalanceTime;
     }
+
+    public void setSingleLegBalanceTime(int singleLegBalanceTime) {
+        this.singleLegBalanceTime = singleLegBalanceTime;
+    }
     
 
     public double getProprioceptionScore() {
         return proprioceptionScore;
     }
-    
 
+    public void setProprioceptionScore(double proprioceptionScore) {
+        this.proprioceptionScore = proprioceptionScore;
+    }
+    
 
     public double getQAngle() {
         return qAngle;
+    }
+
+    public void setQAngle(double qAngle) {
+        this.qAngle = qAngle;
     }
     
 
     public double getJointLaxity() {
         return jointLaxity;
+    }
+
+    public void setJointLaxity(double jointLaxity) {
+        this.jointLaxity = jointLaxity;
     }
     
  
@@ -132,5 +171,8 @@ public class BiomechanicalData {
         return intercondylarNotchWidth;
     }
     
+    public void setIntercondylarNotchWidth(double intercondylarNotchWidth) {
+        this.intercondylarNotchWidth = intercondylarNotchWidth;
+    }
 }
 
